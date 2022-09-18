@@ -1,6 +1,5 @@
 (async function() {
     const LaunchArgs = JSON.parse(Buffer.from(process.argv[2], "base64"))
-    console.log(LaunchArgs)
     const RPC = new (require("@xhayper/discord-rpc").Client)({clientId: LaunchArgs.ClientId})
     await RPC.login()
     const IpcConnection = new (require("./OpenIPC/index.js"))(LaunchArgs.Channel, "Node")
