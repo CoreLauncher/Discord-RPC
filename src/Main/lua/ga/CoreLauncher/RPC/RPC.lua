@@ -27,6 +27,7 @@ return function (NodePath, ApplicationData)
                 }
             }
         )
+        self.NodeProcess = Result
         self.IPC:RegisterMessage(
             "Connected",
             function ()
@@ -48,6 +49,7 @@ return function (NodePath, ApplicationData)
         self:ClearActivity()
         self.IPC:Send("Node", "Disconnect")
         self.IPC:Disconnect()
+        require("uv").process_kill(self.NodeProcess.handle)
     end
 
     return RPC

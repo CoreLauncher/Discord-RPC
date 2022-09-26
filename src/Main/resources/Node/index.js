@@ -24,13 +24,8 @@
         "Disconnect",
         async function() {
             await RPC.destroy()
-            Disconnect()
         }
     )
-
-    async function Disconnect() {
-        await IpcConnection.Disconnect()
-    }
 
     IpcConnection.Send("Main", "Connected")
 })()

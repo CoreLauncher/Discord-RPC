@@ -11,3 +11,8 @@ p(RPC:SetActivity(
         }
     }
 ))
+
+Wait(1)
+p("exit")
+
+RPC:Disconnect()
