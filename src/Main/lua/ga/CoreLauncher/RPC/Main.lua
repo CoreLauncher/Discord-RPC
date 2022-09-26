@@ -43,7 +43,7 @@ if CurrentVersion ~= ExtractedVersion then
     LoadLibraries()
     
     TypeWriter.Logger.Info("Updating Extracting Libraries")
-    local NodePath = Import("ga.corebyte.get-node").Download()
+    NodePath = Import("ga.corebyte.get-node").Download()
     local IPClient = Import("openipc.bootstrap").LoadAll()
     FS.writeFileSync(ApplicationData .. "/NodePath.txt", NodePath)
 
